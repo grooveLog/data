@@ -42,8 +42,8 @@ A table of taggable quotes / meditations from historical and contemporary source
 | `id` | INT  | unique identifer |
 | `text` | CHAR  | Quote |
 | `meditation_attribution_id` | INT  | key to meditation_attributes table |
-| `name` | type  | desc |
-| `name` | type  | desc |
+| `displays` | INT  | number of times a meditation has been rendered |
+| `groovie` | INT  | number of Groovies recieved |
 
 ## meditation_attributions
 A table of meditations resources
@@ -55,6 +55,28 @@ A table of meditations resources
 | `image` | CHAR | ID of an image asset in cloud storage |
 
 # 0.2.0 Know Thyself: Questionnaires
+
+## questionnaires
+
+| Name | Data Type | Desription |
+| ------------- | ------------- | ---------- |
+| `id` | INT  | Unique ID |
+| `type` | CHAR or INT | Declare questionnaire type/format, which will determine how it is read |
+| `title` | CHAR | A name/title for the questionnaire |
+| `description` | CHAR | A description |
+| `image` | CHAR | ID of an image asset in cloud storage |
+| `user_id` | INT | The user who created/contributed the questionnaire | 
+| `questions` | JSON  | Full Questionnaire in JSON Format |
+| `date_created` | DATETIME |      |
+
+NOTE - Needs version control ^^^ so perhaps best to put actual questions in their own table
+
+## questionnaire_answers
+
+| Name | Data Type | Desription |
+| ------------- | ------------- | ---------- |
+| `name` | type  | desc |
+| `name` | type  | desc |
 
 # 0.3.0 Know Thyself: Vision
 
