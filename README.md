@@ -15,7 +15,7 @@ Users will be authenticated by Google Firebase Authenticator which provides a ha
 | `firstname` | CHAR  |      |
 | `lastname` | CHAR  |      |
 | `personal_summary` | CHAR  | user submitted description of who they are and why they're using grooveLog |
-| `signup_datetime` | DATE |     | 
+| `signup_datetime` | DATE | UTC of Signup Time | 
 | `locale` | CHAR | The user's main locale e.g. Europe/Amsterdam or use locale short codes | 
 
 
