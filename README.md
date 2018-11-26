@@ -35,7 +35,7 @@ An audit trail of logins and other important activities
 
 ## meditations
 A table of taggable quotes / meditations from historical and contemporary sources
-* Consider creating mediations as a microservice (possibly open source) so it can be used for other apps
+* Consider creating mediations as a separate microservice (possibly open source) so it can be used for other apps
 
 | Name | Data Type | Desription |
 | ------------- | ------------- | ---------- |
