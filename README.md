@@ -8,17 +8,18 @@ Users will be authenticated by Google Firebase Authenticator which provides a ha
 
 | Name | Data Type | Desription |
 | ------------- | ------------- | ---------- |
-| id | type | hash from google |
-| authentication_method | type  | if available from google e.g. Facebook; Email etc |
-| email | type  | Content Cell |
-| username | type  | Content Cell |
-| firstname | type  | Content Cell |
-| lastname | type  | Content Cell |
-| personal_summary | type  | user submitted description of who they are and why they're using grooveLog |
+| id | CHAR | hash from google |
+| authentication_method | CHAR  | if available from google e.g. Facebook; Email etc |
+| email | CHAR  |      |
+| username | CHAR  |      |
+| firstname | CHAR  |      |
+| lastname | CHAR  |      |
+| personal_summary | CHAR  | user submitted description of who they are and why they're using grooveLog |
+| signup_date | DATE |     | 
 
 
 
-# userAudits
+# user_audits
 An audit trail of logins and other important activities
 
 | Name | Data Type | Desription |
@@ -27,7 +28,7 @@ An audit trail of logins and other important activities
 | name | type  | desc |
 
 
-# table template
+# table_template
 Description
 
 | Name | Data Type | Desription |
