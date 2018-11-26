@@ -8,7 +8,7 @@ Users will be authenticated by Google Firebase Authenticator which provides a ha
 
 | Name | Data Type | Desription |
 | ------------- | ------------- | ---------- |
-| id | CHAR | hash from google |
+| `id` | CHAR | hash from google |
 | authentication_method | CHAR  | if available from google e.g. Facebook; Email etc |
 | email | CHAR  |      |
 | username | CHAR  |      |
