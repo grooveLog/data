@@ -144,7 +144,7 @@ The assignment of a unverversal vision to a personal vision
 | `user_id` | INT | The ID of `user` who assigning the universal vision |
 | `probability` | INT  | probability of achieving the vision |
 | `passion` | INT  | passion for the vision (stars) e.g. 05 10 15 20 25 30 35 40 45 50 |
-| `vision_timescales_id` | INT | key to vision_timescales table |
+| `vision_timescales_id` | INT | key to `vision_timescales` table |
 
 ## vision_timescales
 A list of possible timeframes for achieving the vision
