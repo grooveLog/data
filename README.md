@@ -68,7 +68,7 @@ List of available questionnaires.
 | `description` | CHAR | A description |
 | `instructions` | CHAR | Instructions on how to complete the questionnaire |
 | `image` | CHAR | ID of an image asset in cloud storage |
-| `user_id` | INT | The user who created/contributed the questionnaire | 
+| `user_id` | INT | The `user` who created/contributed the questionnaire | 
 | `date_created` | DATETIME |      |
 
 * NOTE: Perhaps title / descriptions /instructions should also be versionable and actually be held as meta data in the Questions JSON file in the questions table?
