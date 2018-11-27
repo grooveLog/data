@@ -58,20 +58,37 @@ A table of meditations resources
 
 ## questionnaires
 
+
 | Name | Data Type | Desription |
 | ------------- | ------------- | ---------- |
-| `id` | INT  | Unique ID |
-| `type` | CHAR or INT | Declare questionnaire type/format, which will determine how it is read |
+| `id` | INT  | Unique Identifier |
+| `type` | CHAR or INT | Declare questionnaire type/format, which will determine how it is read / displayed etc |
 | `title` | CHAR | A name/title for the questionnaire |
 | `description` | CHAR | A description |
+| `instructions` | CHAR | Instructions on how to complete the questionnaire |
 | `image` | CHAR | ID of an image asset in cloud storage |
 | `user_id` | INT | The user who created/contributed the questionnaire | 
-| `questions` | JSON  | Full Questionnaire in JSON Format |
 | `date_created` | DATETIME |      |
+
+NOTE: Perhaps title / descriptions /instructions should also be versionable and actually be held as meta data in the Questions JSON file in the questions table?
+
+## questions
+Version controlled questions
+
+| Name | Data Type | Desription |
+| ------------- | ------------- | ---------- |
+| `id` | INT  | Unique identifier |
+| `questionnaire_id` | INT  | Key to questionnaires table |
+| `version` | INT  | Allows version control over questionnaires |
+| `release_date` | DATETIME | Date this version was released |
+| `questions` | JSON | Full Questionnaire in JSON Format |
+| `status` | CHAR | Status of questionnaire ACTIVE / INACTIVE etc |
+| `updated_by` | INT | User ID of who committed the questionnaire update | 
+
 
 NOTE - Needs version control ^^^ so perhaps best to put actual questions in their own table
 
-## questionnaire_answers
+## answers
 
 | Name | Data Type | Desription |
 | ------------- | ------------- | ---------- |
