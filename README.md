@@ -148,7 +148,8 @@ The assignment of a unverversal vision to a personal vision
 
 ## vision_timescales
 A list of possible timeframes for achieving the vision
- Name | Data Type | Description |
+
+| Name | Data Type | Description |
 | ------------- | ------------- | ---------- |
 | `id` | INT  | Unique identifier |
 | `text` | CHAR  | E.g. "When I reach old age" |
