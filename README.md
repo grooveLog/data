@@ -149,6 +149,8 @@ The personal implementation of a universal vision
 | `probability` | INT  | probability of achieving the vision e.g. 75% |
 | `passion` | INT  | personal passion for the vision (stars) e.g. 05 10 15 20 25 30 35 40 45 50 |
 | `vision_timescales_id` | INT | key to `vision_timescales` table |
+| `status` | CHAR or INT | e.g. COMPLETED, ABANDONED, POSTPONED etc |
+| `completed_date` | DATE | When completed |
 
 * Note: Need to link this to a table of universal whys?
 
@@ -164,20 +166,40 @@ A list of possible timeframes for achieving the vision
 # 0.4.0 Know Thyself: Goals
 
 ## universal_goals
-Description
+A list of all user contributed goals which may be reusable by others
+* Note: In the future, some goals may be restricted to Team/Group usage only
 
 | Name | Data Type | Description |
 | ------------- | ------------- | ---------- |
-| `name` | type  | desc |
-| `name` | type  | desc |
+| `id` | INT  | Unique identifier |
+| `user_id` | INT | ID of `user` who submitted the vision |
+| `name` | CHAR  | Name of Goal (e.g. 'Run a 5k race' ) |
+| `privacy` | CHAR or INT | PUBLIC or PRIVATE (or TEAM in Future) |
+| `endorsed` | BOOL | Whether endorsd by GrooveLog |
+| `status` | CHAR | ACTIVE / INACTIVE etc. |
+| `date_added` | DATETIME  | When vision was added |
+| `total_assignments` | INT | Counter for the number of times this vision has been used |
+| `average_passion_rating` | FLOAT | Average of all passion ratings |
+
+* NOTE: universal goals should also be taggable for future searches
 
 ## goals
-Description
+The personal implementation of a universal goal
 
 | Name | Data Type | Description |
 | ------------- | ------------- | ---------- |
-| `name` | type  | desc |
-| `name` | type  | desc |
+| `id` | INT  | Unique identifier |
+| `user_id` | INT | The ID of `user` who assigning the universal vision |
+| `universal_goal_id` | INT | key to `universal_goals` |
+| `personal_description` | CHAR | The personal implementation of the universal goal, how I will do it |
+| `progress` | INT  | goal progress, how close to achievement e.g. 50% |
+| `reward` | INT  | personal reward for completing the for the goal (stars) e.g. 05 10 15 20 25 30 35 40 45 50 |
+| `goal_date_from` | DATE | from date (optional, for between dates) |
+| `goal_date_to` | DATE | to date, the final cut-off target date |
+| `status` | CHAR or INT | e.g. COMPLETED, FAILED, POSTPONED etc |
+| `completed_date` | DATE | When completed |
+
+* Note: Need to link this to a table of universal whys?
 
 # 0.5.0 The Groovy Release
 
