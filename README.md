@@ -41,7 +41,7 @@ A table of taggable quotes / meditations from historical and contemporary source
 | ------------- | ------------- | ---------- |
 | `id` | INT  | unique identifer |
 | `text` | CHAR  | Quote |
-| `meditation_attribution_id` | INT  | key to meditation_attributes table |
+| `meditation_attribution_id` | INT  | key to `meditation_attributes` table |
 | `displays` | INT  | number of times a meditation has been rendered |
 | `groovie` | INT  | number of Groovies recieved |
 
@@ -79,7 +79,7 @@ Version controlled questions
 | Name | Data Type | Description |
 | ------------- | ------------- | ---------- |
 | `id` | INT  | Unique identifier |
-| `questionnaire_id` | INT  | Key to questionnaires table |
+| `questionnaire_id` | INT  | Key to `questionnaires` table |
 | `version` | INT  | Allows version control over questionnaires |
 | `release_date` | DATETIME | Date this version was released |
 | `questions` | JSON | Full Questionnaire in JSON Format |
@@ -93,8 +93,8 @@ Answers submitted by a user
 | ------------- | ------------- | ---------- |
 | `id` | INT  | Unique identifier |
 | `user_id` | INT  | Key to users table |
-| `questionnaire_id` | INT  | Key to questionnaires table |
-| `questions_id` | INT  | Key to versioned questions in questions table |
+| `questionnaire_id` | INT  | Key to `questionnaires` table |
+| `questions_id` | INT  | Key to versioned `questions` in questions table |
 | `answers` | JSON  | Answers in JSON format |
 | `started_datetime` | DATETIME  | When questionnaire was started |
 | `submitted_datetime` | DATETIME  | When answers were submitted |
@@ -107,8 +107,8 @@ Provide the ability to rate a questionnaire to provide aggregated user review da
 | ------------- | ------------- | ---------- |
 | `id` | INT  | Unique identifier |
 | `user_id` | INT  | Key to users table |
-| `questionnaire_id` | INT  | Key to questionnaires table |
-| `questions_id` | INT  | Key to versioned questions in questions table |
+| `questionnaire_id` | INT  | Key to `questionnaires` table |
+| `questions_id` | INT  | Key to versioned `questions` in questions table |
 | `rating` | INT  | e.g. rating on a scale of 1 to 5 (e.g. stars) |
 | `comment` | CHAR | User comment |
 | `datetime` | DATETIME  | When rating was submitted |
@@ -124,7 +124,7 @@ A list of all user contributed visions which may be reusable by others
 | Name | Data Type | Description |
 | ------------- | ------------- | ---------- |
 | `id` | INT  | Unique identifier |
-| `user_id` | INT | ID of user who added the vision |
+| `user_id` | INT | ID of `user` who added the vision |
 | `name` | CHAR  | Name of Vision (e.g. 'Be my own boss') |
 | `privacy` | CHAR or INT | PUBLIC or PRIVATE (or TEAM in Future) |
 | `endorsed` | BOOL | Whether endorsd by GrooveLog |
