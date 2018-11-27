@@ -16,6 +16,8 @@ Users will be authenticated by Google Firebase Authenticator which provides a ha
 | `username` | CHAR  |      |
 | `firstname` | CHAR  |      |
 | `lastname` | CHAR  |      |
+| `birthday` | DATE | Use this to get the age of the user (non-mandatory) |
+| `gender` | INT or CHAR | e.g. MALE, FEMALE - OTHER? (non-mandatory) |
 | `personal_summary` | CHAR  | user submitted description of who they are and why they're using grooveLog |
 | `signup_datetime` | DATE | UTC of Signup Time | 
 | `locale` | CHAR | The user's main locale e.g. Europe/Amsterdam or use locale short codes | 
@@ -136,15 +138,19 @@ A list of all user contributed visions which may be reusable by others
 * NOTE: universal visions should also be taggable for future searches
 
 ## visions
-The assignment of a unverversal vision to a personal vision 
+The personal implementation of a universal vision
 
 | Name | Data Type | Description |
 | ------------- | ------------- | ---------- |
 | `id` | INT  | Unique identifier |
 | `user_id` | INT | The ID of `user` who assigning the universal vision |
-| `probability` | INT  | probability of achieving the vision |
-| `passion` | INT  | passion for the vision (stars) e.g. 05 10 15 20 25 30 35 40 45 50 |
+| `universal_vision_id` | INT | key to `universal_visions` |
+| `personal_description` | CHAR | The personal implementation of the universal vision, how I will do it |
+| `probability` | INT  | probability of achieving the vision e.g. 75% |
+| `passion` | INT  | personal passion for the vision (stars) e.g. 05 10 15 20 25 30 35 40 45 50 |
 | `vision_timescales_id` | INT | key to `vision_timescales` table |
+
+* Note: Need to link this to a table of universal whys?
 
 ## vision_timescales
 A list of possible timeframes for achieving the vision
@@ -153,7 +159,7 @@ A list of possible timeframes for achieving the vision
 | ------------- | ------------- | ---------- |
 | `id` | INT  | Unique identifier |
 | `text` | CHAR  | E.g. "When I reach old age" |
-| `numeric` |  INT  |  numeric equivalent if poss |
+| `numeric` |  INT  |  numeric representation of the text, e.g. how far in the future is the vision |
 
 # 0.4.0 Know Thyself: Goals
 
