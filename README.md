@@ -100,6 +100,21 @@ Answers submitted by a user
 | `submitted_datetime` | DATETIME  | When answers were submitted |
 | `status` | CHAR | Status - e.g. IN PROGRESS, COMPLETED |
 
+## questionnaire_ratings
+Provide the ability to rate a questionnaire to provide aggregated user review data
+
+| Name | Data Type | Description |
+| ------------- | ------------- | ---------- |
+| `id` | INT  | Unique identifier |
+| `user_id` | INT  | Key to users table |
+| `questionnaire_id` | INT  | Key to questionnaires table |
+| `questions_id` | INT  | Key to versioned questions in questions table |
+| `rating` | INT  | e.g. rating on a scale of 1 to 5 (e.g. stars) |
+| `comment` | CHAR | User comment |
+| `datetime` | DATETIME  | When rating was submitted |
+
+* NOTE: Possibly have a universal ratings table for all kinds of resources instead? 
+
 # 0.3.0 Know Thyself: Vision
 
 ## universal_visions
