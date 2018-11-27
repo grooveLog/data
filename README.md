@@ -200,7 +200,17 @@ The personal implementation of a universal goal
 | `completed_date` | DATE | When completed |
 
 * Note: Need to link this to a table of universal whys?
-* Note: Need to link a number of visions to the goals table - so I guess this will need a pivot table? God Damnit, I'm rusty!
+
+## goals__visions
+A pivot table to link multple visions to a single goal
+
+| Name | Data Type | Description |
+| ------------- | ------------- | ---------- |
+| `goal_id` | INT  | key to `goals` table |
+| `vision_id` | INT  | key to `visions` table |
+
+* Ugh, is this correct?  Crikey I've forgotten how to do this...
+
 
 # 0.5.0 The Groovy Release
 
