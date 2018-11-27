@@ -57,7 +57,8 @@ A table of meditations resources
 # 0.2.0 Know Thyself: Questionnaires
 
 ## questionnaires
-
+List of available questionnaires.
+Note for future: We may want to limit questionnaire visibility to a Team/Group. 
 
 | Name | Data Type | Desription |
 | ------------- | ------------- | ---------- |
@@ -85,15 +86,19 @@ Version controlled questions
 | `status` | CHAR | Status of questionnaire ACTIVE / INACTIVE etc |
 | `updated_by` | INT | User ID of who committed the questionnaire update | 
 
-
-NOTE - Needs version control ^^^ so perhaps best to put actual questions in their own table
-
 ## answers
+Answers submitted by a user
 
 | Name | Data Type | Desription |
 | ------------- | ------------- | ---------- |
-| `name` | type  | desc |
-| `name` | type  | desc |
+| `id` | INT  | Unique identifier |
+| `user_id` | INT  | Key to users table |
+| `questionnaire_id` | INT  | Key to questionnaires table |
+| `questions_id` | INT  | Key to versioned questions in questions table |
+| `answers` | JSON  | Answers in JSON format |
+| `started_datetime` | DATETIME  | When questionnaire was started |
+| `submitted_datetime` | DATETIME  | When answers were submitted |
+| `status` | CHAR | Status - e.g. IN PROGRESS, COMPLETED |
 
 # 0.3.0 Know Thyself: Vision
 
