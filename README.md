@@ -8,7 +8,7 @@ Below is a list of tables required to begin sketching out a data model
 ## users
 Users will be authenticated by Google Firebase Authenticator which provides a hash Key
 
-| Name | Data Type | Desription |
+| Name | Data Type | Description |
 | ------------- | ------------- | ---------- |
 | `id` | CHAR | hash from google |
 | `authentication_method` | CHAR or INT  | if available from google e.g. Facebook; Email etc |
@@ -26,7 +26,7 @@ Users will be authenticated by Google Firebase Authenticator which provides a ha
 ## user_audits
 An audit trail of logins and other important activities
 
-| Name | Data Type | Desription |
+| Name | Data Type | Description |
 | ------------- | ------------- | ---------- |
 | `user_id` | CHAR  |       |
 | `activity` | CHAR or INT | References a range of possible activites (e.g. Login, Failed Login, Privacy Settings Change etc...) |
@@ -37,7 +37,7 @@ An audit trail of logins and other important activities
 A table of taggable quotes / meditations from historical and contemporary sources
 * Consider creating mediations as a separate microservice (possibly open source) so it can be used for other apps
 
-| Name | Data Type | Desription |
+| Name | Data Type | Description |
 | ------------- | ------------- | ---------- |
 | `id` | INT  | unique identifer |
 | `text` | CHAR  | Quote |
@@ -48,7 +48,7 @@ A table of taggable quotes / meditations from historical and contemporary source
 ## meditation_attributions
 A table of meditations resources
 
-| Name | Data Type | Desription |
+| Name | Data Type | Description |
 | ------------- | ------------- | ---------- |
 | `id` | INT  | unique identifier |
 | `name` | CHAR  | name of the person e.g.'Friedrich Nietzsche' |
@@ -58,9 +58,9 @@ A table of meditations resources
 
 ## questionnaires
 List of available questionnaires.
-Note for future: We may want to limit questionnaire visibility to a Team/Group. 
+* Note for future: We may want to limit questionnaire visibility to a Team/Group. 
 
-| Name | Data Type | Desription |
+| Name | Data Type | Description |
 | ------------- | ------------- | ---------- |
 | `id` | INT  | Unique Identifier |
 | `type` | CHAR or INT | Declare questionnaire type/format, which will determine how it is read / displayed etc |
@@ -71,12 +71,12 @@ Note for future: We may want to limit questionnaire visibility to a Team/Group.
 | `user_id` | INT | The user who created/contributed the questionnaire | 
 | `date_created` | DATETIME |      |
 
-NOTE: Perhaps title / descriptions /instructions should also be versionable and actually be held as meta data in the Questions JSON file in the questions table?
+* NOTE: Perhaps title / descriptions /instructions should also be versionable and actually be held as meta data in the Questions JSON file in the questions table?
 
 ## questions
 Version controlled questions
 
-| Name | Data Type | Desription |
+| Name | Data Type | Description |
 | ------------- | ------------- | ---------- |
 | `id` | INT  | Unique identifier |
 | `questionnaire_id` | INT  | Key to questionnaires table |
@@ -89,7 +89,7 @@ Version controlled questions
 ## answers
 Answers submitted by a user
 
-| Name | Data Type | Desription |
+| Name | Data Type | Description |
 | ------------- | ------------- | ---------- |
 | `id` | INT  | Unique identifier |
 | `user_id` | INT  | Key to users table |
@@ -105,7 +105,7 @@ Answers submitted by a user
 ## universal_visions
 Description
 
-| Name | Data Type | Desription |
+| Name | Data Type | Description |
 | ------------- | ------------- | ---------- |
 | `name` | type  | desc |
 | `name` | type  | desc |
@@ -113,7 +113,7 @@ Description
 ## visions
 Description
 
-| Name | Data Type | Desription |
+| Name | Data Type | Description |
 | ------------- | ------------- | ---------- |
 | `name` | type  | desc |
 | `name` | type  | desc |
@@ -123,7 +123,7 @@ Description
 ## universal_goals
 Description
 
-| Name | Data Type | Desription |
+| Name | Data Type | Description |
 | ------------- | ------------- | ---------- |
 | `name` | type  | desc |
 | `name` | type  | desc |
@@ -131,7 +131,7 @@ Description
 ## goals
 Description
 
-| Name | Data Type | Desription |
+| Name | Data Type | Description |
 | ------------- | ------------- | ---------- |
 | `name` | type  | desc |
 | `name` | type  | desc |
@@ -141,7 +141,7 @@ Description
 ## universal_grooves
 Description
 
-| Name | Data Type | Desription |
+| Name | Data Type | Description |
 | ------------- | ------------- | ---------- |
 | `name` | type  | desc |
 | `name` | type  | desc |
@@ -149,7 +149,7 @@ Description
 ## grooves
 Description
 
-| Name | Data Type | Desription |
+| Name | Data Type | Description |
 | ------------- | ------------- | ---------- |
 | `name` | type  | desc |
 | `name` | type  | desc |
