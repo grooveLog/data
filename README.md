@@ -124,28 +124,35 @@ A list of all user contributed visions which may be reusable by others
 | Name | Data Type | Description |
 | ------------- | ------------- | ---------- |
 | `id` | INT  | Unique identifier |
-| `user_id` | INT | ID of `user` who added the vision |
-| `name` | CHAR  | Name of Vision (e.g. 'Be my own boss') |
+| `user_id` | INT | ID of `user` who submitted the vision |
+| `name` | CHAR  | Name of Vision (e.g. 'Be my own boss' ) |
 | `privacy` | CHAR or INT | PUBLIC or PRIVATE (or TEAM in Future) |
 | `endorsed` | BOOL | Whether endorsd by GrooveLog |
 | `status` | CHAR | ACTIVE / INACTIVE etc. |
 | `date_added` | DATETIME  | When vision was added |
+| `total_assignments` | INT | Counter for the number of times this vision has been used |
+| `average_passion_rating` | FLOAT | Average of all passion ratings |
 
 * NOTE: universal visions should also be taggable for future searches
 
-## universal_visions_ratings
-| Name | Data Type | Description |
-| ------------- | ------------- | ---------- |
-| `id` | INT  | Unique identifier |
-| `name` | type  | desc |
-
 ## visions
-Description
+The assignment of a unverversal vision to a personal vision 
 
 | Name | Data Type | Description |
 | ------------- | ------------- | ---------- |
 | `id` | INT  | Unique identifier |
-| `name` | type  | desc |
+| `user_id` | INT | The ID of `user` who assigning the universal vision |
+| `probability` | INT  | probability of achieving the vision |
+| `passion` | INT  | passion for the vision (stars) e.g. 05 10 15 20 25 30 35 40 45 50 |
+| `vision_timescales_id` | INT | key to vision_timescales table |
+
+## vision_timescales
+A list of possible timeframes for achieving the vision
+ Name | Data Type | Description |
+| ------------- | ------------- | ---------- |
+| `id` | INT  | Unique identifier |
+| `text` | CHAR  | E.g. "When I reach old age" |
+| `numeric` |  INT  |  numeric equivalent if poss |
 
 # 0.4.0 Know Thyself: Goals
 
