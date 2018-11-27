@@ -200,6 +200,7 @@ The personal implementation of a universal goal
 | `completed_date` | DATE | When completed |
 
 * Note: Need to link this to a table of universal whys?
+* Note: Need to link a number of visions to the goals table - so I guess this will need a pivot table? God Damnit, I'm rusty!
 
 # 0.5.0 The Groovy Release
 
