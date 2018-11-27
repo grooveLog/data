@@ -118,11 +118,25 @@ Provide the ability to rate a questionnaire to provide aggregated user review da
 # 0.3.0 Know Thyself: Vision
 
 ## universal_visions
-Description
+A list of all user contributed visions which may be reusable by others
+* Note: In the future, some visions may be restricted to Team/Group usage only
 
 | Name | Data Type | Description |
 | ------------- | ------------- | ---------- |
-| `name` | type  | desc |
+| `id` | INT  | Unique identifier |
+| `user_id` | INT | ID of user who added the vision |
+| `name` | CHAR  | Name of Vision (e.g. 'Be my own boss') |
+| `privacy` | CHAR or INT | PUBLIC or PRIVATE (or TEAM in Future) |
+| `endorsed` | BOOL | Whether endorsd by GrooveLog |
+| `status` | CHAR | ACTIVE / INACTIVE etc. |
+| `date_added` | DATETIME  | When vision was added |
+
+* NOTE: universal visions should also be taggable for future searches
+
+## universal_visions_ratings
+| Name | Data Type | Description |
+| ------------- | ------------- | ---------- |
+| `id` | INT  | Unique identifier |
 | `name` | type  | desc |
 
 ## visions
@@ -130,7 +144,7 @@ Description
 
 | Name | Data Type | Description |
 | ------------- | ------------- | ---------- |
-| `name` | type  | desc |
+| `id` | INT  | Unique identifier |
 | `name` | type  | desc |
 
 # 0.4.0 Know Thyself: Goals
