@@ -261,3 +261,14 @@ Description
 
 
 # 1.0.0 Official LAUNCH
+
+# 2.0.0 TEAMS
+With the launch of the TEAMS functionality we will need to facilitate the following:
+
+* A user can create a TEAM/GROUP
+* All Content is private to the TEAM (Perhaps cryptographically hashed for security)
+* Admins can be appointed in the TEAM with special priveleges
+* Admins may invite other people to the TEAM, or Team members may invite others which would require admin approval
+* There will be TEAM visions/goals/grooves which apply to all, mixed with perosnal vision/goals/groves
+* Some questionnaires will be TEAM questionnaires, and may be anonymous. E.g. Memmbers will have to complete the questionnaire in a given timeframe and results are aggregated. A use case may be an anonymous Team Dynamics quesionnaire.
+* There will be TEAM only Feeds.  A user may log in and out of the TEAM and easily switch between Team Feeds and Personal Feeds.
