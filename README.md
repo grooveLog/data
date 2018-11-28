@@ -150,6 +150,7 @@ The personal implementation of a universal vision
 | `passion` | INT  | personal passion for the vision (stars) e.g. 05 10 15 20 25 30 35 40 45 50 |
 | `vision_timescales_id` | INT | key to `vision_timescales` table |
 | `status` | CHAR or INT | e.g. COMPLETED, ABANDONED, POSTPONED etc |
+| `date_added` | DATE | When added to my personal visions list |
 | `completed_date` | DATE | When completed |
 
 * Note: Need to link this to a table of universal whys?
@@ -172,14 +173,14 @@ A list of all user contributed goals which may be reusable by others
 | Name | Data Type | Description |
 | ------------- | ------------- | ---------- |
 | `id` | INT  | Unique identifier |
-| `user_id` | INT | ID of `user` who submitted the vision |
+| `user_id` | INT | ID of `user` who submitted the goal |
 | `name` | CHAR  | Name of Goal (e.g. 'Run a 5k race' ) |
 | `privacy` | CHAR or INT | PUBLIC or PRIVATE (or TEAM in Future) |
-| `endorsed` | BOOL | Whether endorsd by GrooveLog |
+| `endorsed` | BOOL | Whether endorsed by GrooveLog |
 | `status` | CHAR | ACTIVE / INACTIVE etc. |
-| `date_added` | DATETIME  | When vision was added |
-| `total_assignments` | INT | Counter for the number of times this vision has been used |
-| `average_passion_rating` | FLOAT | Average of all passion ratings |
+| `date_added` | DATETIME  | When goal was added |
+| `total_assignments` | INT | Counter for the number of times this goal has been used |
+| `average_reward_rating` | FLOAT | Average of all preward ratings |
 
 * NOTE: universal goals should also be taggable for future searches
 
@@ -189,7 +190,7 @@ The personal implementation of a universal goal
 | Name | Data Type | Description |
 | ------------- | ------------- | ---------- |
 | `id` | INT  | Unique identifier |
-| `user_id` | INT | The ID of `user` who assigning the universal vision |
+| `user_id` | INT | The ID of `user` who assigning the universal goal |
 | `universal_goal_id` | INT | key to `universal_goals` |
 | `personal_description` | CHAR | The personal implementation of the universal goal, how I will do it |
 | `progress` | INT  | goal progress, how close to achievement e.g. 50% |
@@ -197,12 +198,13 @@ The personal implementation of a universal goal
 | `goal_date_from` | DATE | from date (optional, for between dates) |
 | `goal_date_to` | DATE | to date, the final cut-off target date |
 | `status` | CHAR or INT | e.g. COMPLETED, FAILED, POSTPONED etc |
+| `date_added` | DATE | When added to my personal goals list |
 | `completed_date` | DATE | When completed |
 
 * Note: Need to link this to a table of universal whys?
 
 ## goals__visions
-A pivot table to link multple visions to a single goal
+A pivot table to link multple visions to a single goal - one-to-many relationship
 
 | Name | Data Type | Description |
 | ------------- | ------------- | ---------- |
@@ -215,20 +217,45 @@ A pivot table to link multple visions to a single goal
 # 0.5.0 The Groovy Release
 
 ## universal_grooves
-Description
+A list of all user contributed grooves which may be reusable by others
+* Note: In the future, some grooves may be restricted to Team/Group usage only
 
 | Name | Data Type | Description |
 | ------------- | ------------- | ---------- |
-| `name` | type  | desc |
-| `name` | type  | desc |
+| `id` | INT  | Unique identifier |
+| `user_id` | INT | ID of `user` who submitted the groove |
+| `name` | CHAR  | Name of Groove (e.g. 'Running' or 'Practice Scales' or 'Fasting' |
+| `privacy` | CHAR or INT | PUBLIC or PRIVATE (or TEAM in Future) |
+| `endorsed` | BOOL | Whether endorsd by GrooveLog |
+| `status` | CHAR | ACTIVE / INACTIVE etc. |
+| `date_added` | DATETIME  | When groove was added |
+| `total_assignments` | INT | Counter for the number of times this groove has been used |
+
+* NOTE: universal grooves should also be taggable for future searches
 
 ## grooves
-Description
+The personal implementation of a universal groove
 
 | Name | Data Type | Description |
 | ------------- | ------------- | ---------- |
-| `name` | type  | desc |
-| `name` | type  | desc |
+| `id` | INT  | Unique identifier |
+| `user_id` | INT | The ID of `user` who assigning the universal groove |
+| `universal_groove_id` | INT | key to `universal_grooves` |
+| `personal_description` | CHAR | The personal implementation of the universal groove, how I will do it |
+| `commitment` | INT  | personal commitment - e.g. 75% |
+| `volume` | N/A | NEEDS SEPARATE TABLE - e.g. 20 mins / or just a number like 100 |
+| `frequency` | N/A | NEEDS SEPARATE TABLE - e.g. How many times per week, or per month, or per day |
+| `status` | CHAR or INT | e.g. ACTIVE / PAUSED etc |
+| `date_added` | DATE | When added to my personal groove list |
+
+
+## grooves__goals
+A pivot table to link multple goals to a single groove - one-to-many relationship
+
+| Name | Data Type | Description |
+| ------------- | ------------- | ---------- |
+| `groove_id` | INT  | key to `grooves` table |
+| `goal_id` | INT  | key to `goals` table |
 
 # 0.6.0 Feeds/Dashboard
 
