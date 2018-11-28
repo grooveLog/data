@@ -297,7 +297,13 @@ This is the quick moods logger with the happy or smiley face 'HappyOmeter'
 A log for the introspection survey results...
 * Note: The survey will be held in the `questionnaires` table
 
-
+| Name | Data Type | Description |
+| ------------- | ------------- | ---------- |
+| `id` | INT  | Unique identifier |
+| `user_id` | INT  | The `user_id` who is logging the mood |
+| `answer_id` | INT  | ID from the `answers` table (note this table also relates to the question version and questionnaire id) |
+| `comment` | CHAR  | comment to accompany the mood rating |
+| `datetime` | DATETIME | Datetime the mood was logged |
 
 # 0.9.0 Record Journal Entries
 
