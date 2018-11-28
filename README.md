@@ -307,6 +307,21 @@ A log for the introspection survey results...
 
 # 0.9.0 Record Journal Entries
 
+## journal_questions
+A curated list of user submitted (and GrooveLog submiitted) journalling questions
+
+| Name | Data Type | Description |
+| ------------- | ------------- | ---------- |
+| `id` | INT  | Unique identifier |
+| `user_id` | INT  | The `user_id` who has submitted the question |
+| `question` | CHAR | The journalling question |
+| `type` | CHAR or INT |e.g. Morning, Evening, General, PRIVATE (e.g. private to the user) |
+| `endorsed` | BOOL | Whether endorsed by GrooveLog |
+| `status` | CHAR | ACTIVE / INACTIVE etc. |
+| `date_added` | DATETIME  | When journal question was added |
+| `number_of_appearances` | INT | How many times this question has appeared |
+| `number_of_answers` | INT | How many times this question has been answered |
+
 
 # 0.10.0 User Interactions and the GROOVY button
 
