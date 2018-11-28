@@ -261,11 +261,13 @@ A pivot table to link multple goals to a single groove - one-to-many relationshi
 | `goal_id` | INT  | key to `goals` table |
 
 # 0.6.0 Feeds/Dashboard
-This won't include any new tables, but will require websockets to produce a dynamic feed of Feeds for the front-end to consume.
+* This won't include any new tables, but will require websockets to produce a dynamic feed of Feeds for the front-end to consume.
 * Things included would be initial sign-up datetime, questionnaire completion, visions/goals/grooves added and this info would come from the various tables.
 * So to get the historical feed there would be a query from multiple tables which would be pre-loaded to the front end, any new feeds would come in via websockets
 
 # 0.7.0 Record Grooves
+
+## grooves_log
 The ability to record the grooves achieved on a per day basis
 
 | Name | Data Type | Description |
@@ -279,6 +281,22 @@ The ability to record the grooves achieved on a per day basis
 | `datetime_logged` | DATETIME | Time it was logged | 
 
 # 0.8.0 Record Moods
+
+## moods_quick_log
+This is the quick moods logger with the happy or smiley face 'HappyOmeter'
+
+| Name | Data Type | Description |
+| ------------- | ------------- | ---------- |
+| `id` | INT  | Unique identifier |
+| `user_id` | INT  | The `user_id` who is logging the mood |
+| `mood_score` | INT  | 0 to 100 |
+| `comment` | CHAR  | comment to accompany the mood rating |
+| `datetime` | DATETIME | Datetime the mood was logged |
+
+## moods_introspection_log
+A log for the introspection survey results...
+* Note: The survey will be held in the `questionnaires` table
+
 
 
 # 0.9.0 Record Journal Entries
