@@ -266,7 +266,17 @@ This won't include any new tables, but will require websockets to produce a dyna
 * So to get the historical feed there would be a query from multiple tables which would be pre-loaded to the front end, any new feeds would come in via websockets
 
 # 0.7.0 Record Grooves
+The ability to record the grooves achieved on a per day basis
 
+| Name | Data Type | Description |
+| ------------- | ------------- | ---------- |
+| `id` | INT  | Unique identifier |
+| `user_id` | INT  | The `user_id` who is logging the groove |
+| `groove_id` | INT  | key to `groove_id` table |
+| `datetime_performed` | DATETIME  | date the groove is performed |
+| `type` | CHAR or INT  | DONE or FAIL |
+| `comment` | CHAR | Comment or excuse |
+| `datetime_logged` | DATETIME | Time it was logged | 
 
 # 0.8.0 Record Moods
 
