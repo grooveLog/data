@@ -393,10 +393,20 @@ Tracking the 'freind' relationships
 * We will also provide a global feed of the people you are supporting. Is this doable efficiantly by querying multiple tables or so we need an aggregated feed table, or something else?
 
 ## direct_messages
+DMs between users
+
 | Name | Data Type | Description |
 | ------------- | ------------- | ---------- |
 | `id` | INT  | Unique identifier |
-More, more, more...
+| `sender_id` | INT  | Key to `users` table |
+| `recipient_id` | INT  | Key to `users` table |
+| `body` | TEXT  | Message |
+| `created_at` | DATETIME | Datetime the message was sent |
+| `seen_at` | DATETIME | Datetime the message was seen by recipient |
+| `deleted_at` | DATETIME | Datetime the message was seen by recipient |
+| `recipient_status` | CHAR or INT | PENDING, SEEN, DELETED |
+| `sender_status` | CHAR or INT | e.g. Recalled / Deleted |
+
 
 ## groovy_buttons
 | Name | Data Type | Description |
