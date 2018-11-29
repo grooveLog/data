@@ -19,11 +19,13 @@ Users will be authenticated by Google Firebase Authenticator which provides a ha
 | `birthday` | DATE | Use this to get the age of the user (non-mandatory) |
 | `gender` | INT or CHAR | e.g. MALE, FEMALE - OTHER? (non-mandatory) |
 | `personal_summary` | CHAR  | user submitted description of who they are and why they're using grooveLog |
-| `signup_datetime` | DATE | UTC of Signup Time | 
+| `terms_accepted` | BOOL | If terms were accepted | 
+| `created_at` | DATE | UTC of Signup Time | 
+| `updated_at` | DATE | Date of last update | 
 | `locale` | CHAR | The user's main locale e.g. Europe/Amsterdam or use locale short codes | 
 | `status` | CHAR or INT | 'ACTIVE', 'INACITVE', 'GROOVER' etc... |
 
-
+* Terms Accepted probably needs to relate to a versioned list of terms, organised by term types...
 
 ## user_audits
 An audit trail of logins and other important activities
@@ -32,7 +34,7 @@ An audit trail of logins and other important activities
 | ------------- | ------------- | ---------- |
 | `user_id` | CHAR  |       |
 | `activity` | CHAR or INT | References a range of possible activites (e.g. Login, Failed Login, Privacy Settings Change etc...) |
-| `datetime` | DATETIME |       |
+| `created_at` | DATETIME | When the activity happened |
 
 
 ## meditations
@@ -46,6 +48,8 @@ A table of taggable quotes / meditations from historical and contemporary source
 | `meditation_attribution_id` | INT  | key to `meditation_attributes` table |
 | `displays` | INT  | number of times a meditation has been rendered |
 | `groovie` | INT  | number of Groovies recieved |
+| `created_at` | DATETIME | When the meditation was created |
+| `updated_at` | DATETIME | When the questionnaire was last updated |
 
 ## meditation_attributions
 A table of meditations resources
@@ -71,7 +75,7 @@ List of available questionnaires.
 | `instructions` | CHAR | Instructions on how to complete the questionnaire |
 | `image` | CHAR | ID of an image asset in cloud storage |
 | `user_id` | INT | The `user` who created/contributed the questionnaire | 
-| `date_created` | DATETIME |      |
+| `created_at` | DATETIME | When the questionnaire was created |
 
 * NOTE: Perhaps title / descriptions /instructions should also be versionable and actually be held as meta data in the Questions JSON file in the questions table?
 
@@ -83,7 +87,7 @@ Version controlled questions
 | `id` | INT  | Unique identifier |
 | `questionnaire_id` | INT  | Key to `questionnaires` table |
 | `version` | INT  | Allows version control over questionnaires |
-| `release_date` | DATETIME | Date this version was released |
+| `created_at` | DATETIME | Date this version was released |
 | `questions` | JSON | Full Questionnaire in JSON Format |
 | `status` | CHAR | Status of questionnaire ACTIVE / INACTIVE etc |
 | `updated_by` | INT | User ID of who committed the questionnaire update | 
@@ -98,8 +102,8 @@ Answers submitted by a user
 | `questionnaire_id` | INT  | Key to `questionnaires` table |
 | `questions_id` | INT  | Key to versioned `questions` in questions table |
 | `answers` | JSON  | Answers in JSON format |
-| `started_datetime` | DATETIME  | When questionnaire was started |
-| `submitted_datetime` | DATETIME  | When answers were submitted |
+| `started_at` | DATETIME  | When questionnaire was started |
+| `submitted_at` | DATETIME  | When answers were submitted |
 | `status` | CHAR | Status - e.g. IN PROGRESS, COMPLETED |
 
 ## questionnaire_ratings
@@ -113,7 +117,7 @@ Provide the ability to rate a questionnaire to provide aggregated user review da
 | `questions_id` | INT  | Key to versioned `questions` in questions table |
 | `rating` | INT  | e.g. rating on a scale of 1 to 5 (e.g. stars) |
 | `comment` | CHAR | User comment |
-| `datetime` | DATETIME  | When rating was submitted |
+| `created_at` | DATETIME  | When rating was submitted |
 
 * NOTE: Possibly have a universal ratings table for all kinds of resources instead? 
 
@@ -131,7 +135,7 @@ A list of all user contributed visions which may be reusable by others
 | `privacy` | CHAR or INT | PUBLIC or PRIVATE (or TEAM in Future) |
 | `endorsed` | BOOL | Whether endorsd by GrooveLog |
 | `status` | CHAR | ACTIVE / INACTIVE etc. |
-| `date_added` | DATETIME  | When vision was added |
+| `created_at` | DATETIME  | When vision was added |
 | `total_assignments` | INT | Counter for the number of times this vision has been used |
 | `average_passion_rating` | FLOAT | Average of all passion ratings |
 
@@ -150,8 +154,8 @@ The personal implementation of a universal vision
 | `passion` | INT  | personal passion for the vision (stars) e.g. 05 10 15 20 25 30 35 40 45 50 |
 | `vision_timescales_id` | INT | key to `vision_timescales` table |
 | `status` | CHAR or INT | e.g. COMPLETED, ABANDONED, POSTPONED etc |
-| `date_added` | DATE | When added to my personal visions list |
-| `completed_date` | DATE | When completed |
+| `created_at` | DATE | When added to my personal visions list |
+| `completed_at` | DATE | When completed |
 
 * Note: Need to link this to a table of universal whys?
 
@@ -178,7 +182,7 @@ A list of all user contributed goals which may be reusable by others
 | `privacy` | CHAR or INT | PUBLIC or PRIVATE (or TEAM in Future) |
 | `endorsed` | BOOL | Whether endorsed by GrooveLog |
 | `status` | CHAR | ACTIVE / INACTIVE etc. |
-| `date_added` | DATETIME  | When goal was added |
+| `created_at` | DATETIME  | When goal was added |
 | `total_assignments` | INT | Counter for the number of times this goal has been used |
 | `average_reward_rating` | FLOAT | Average of all preward ratings |
 
@@ -198,8 +202,8 @@ The personal implementation of a universal goal
 | `goal_date_from` | DATE | from date (optional, for between dates) |
 | `goal_date_to` | DATE | to date, the final cut-off target date |
 | `status` | CHAR or INT | e.g. COMPLETED, FAILED, POSTPONED etc |
-| `date_added` | DATE | When added to my personal goals list |
-| `completed_date` | DATE | When completed |
+| `created_at` | DATE | When added to my personal goals list |
+| `completed_at` | DATE | When completed |
 
 * Note: Need to link this to a table of universal whys?
 
@@ -228,7 +232,7 @@ A list of all user contributed grooves which may be reusable by others
 | `privacy` | CHAR or INT | PUBLIC or PRIVATE (or TEAM in Future) |
 | `endorsed` | BOOL | Whether endorsd by GrooveLog |
 | `status` | CHAR | ACTIVE / INACTIVE etc. |
-| `date_added` | DATETIME  | When groove was added |
+| `created_at` | DATETIME  | When groove was added |
 | `total_assignments` | INT | Counter for the number of times this groove has been used |
 
 * NOTE: universal grooves should also be taggable for future searches
@@ -249,7 +253,7 @@ The personal implementation of a universal groove
 | `frequency_number` | INT | number of times performed (e.g. 'once' per week / 'twice' per week' |
 | `frequency_period` | CHAR or INT| e.g. 'per week', 'per day', or 'per month' |
 | `status` | CHAR or INT | e.g. ACTIVE / PAUSED etc |
-| `date_added` | DATE | When added to my personal groove list |
+| `created_at` | DATE | When added to my personal groove list |
 
 
 ## grooves__goals
@@ -275,10 +279,10 @@ The ability to record the grooves achieved on a per day basis
 | `id` | INT  | Unique identifier |
 | `user_id` | INT  | The `user_id` who is logging the groove |
 | `groove_id` | INT  | key to `groove_id` table |
-| `datetime_performed` | DATETIME  | date the groove is performed |
+| `performed_at` | DATETIME  | date the groove is performed |
 | `type` | CHAR or INT  | DONE or FAIL |
 | `comment` | CHAR | Comment or excuse |
-| `datetime_logged` | DATETIME | Time it was logged | 
+| `created_at` | DATETIME | Time it was logged | 
 
 # 0.8.0 Record Moods
 
@@ -291,7 +295,7 @@ This is the quick moods logger with the happy or smiley face 'HappyOmeter'
 | `user_id` | INT  | The `user_id` who is logging the mood |
 | `mood_score` | INT  | 0 to 100 |
 | `comment` | CHAR  | comment to accompany the mood rating |
-| `datetime` | DATETIME | Datetime the mood was logged |
+| `created_at` | DATETIME | Datetime the mood was logged |
 
 ## moods_introspection_log
 A log for the introspection survey results...
@@ -303,7 +307,7 @@ A log for the introspection survey results...
 | `user_id` | INT  | The `user_id` who is logging the mood |
 | `answer_id` | INT  | ID from the `answers` table (note this table also relates to the question version and questionnaire id) |
 | `comment` | CHAR  | comment to accompany the mood rating |
-| `datetime` | DATETIME | Datetime the mood was logged |
+| `created_at` | DATETIME | Datetime the mood was logged |
 
 # 0.9.0 Record Journal Entries
 
@@ -318,27 +322,43 @@ A curated list of user submitted (and GrooveLog submiitted) journalling question
 | `type` | CHAR or INT |e.g. Morning, Evening, General, PRIVATE (e.g. private to the user) |
 | `endorsed` | BOOL | Whether endorsed by GrooveLog |
 | `status` | CHAR | ACTIVE / INACTIVE etc. |
-| `date_added` | DATETIME  | When journal question was added |
+| `created_at` | DATETIME  | When journal question was added |
 | `number_of_appearances` | INT | How many times this question has appeared |
 | `number_of_answers` | INT | How many times this question has been answered |
 
+## journal_log
+Log Journalling thoughts
 
-# 0.10.0 User Interactions and the GROOVY button
+| Name | Data Type | Description |
+| ------------- | ------------- | ---------- |
+| `id` | INT  | Unique identifier |
+| `user_id` | INT  | The `user_id` who is logging the journal entry |
+| `journal_question_id` | INT  | Key to `journal_questions` table |
+| `entry` | CHAR  | The journal entry |
+| `created_at` | DATETIME | Datetime the entry was originally logged |
+| `updated_at` | DATETIME | Datetime the entry was last edited |
+
+* Decision: should we journal entries be versioned and editable etc?
+
+# 0.10.0 Add and Record Tasks
 
 
-# 0.11.0 Misogi
+# 0.11.0 User Interactions and the GROOVY button
 
 
-# 0.11.0 Groove Scheduler
+# 0.12.0 Misogi
 
 
-# 0.12.0 Inspiration & Challenges
+# 0.13.0 Groove Scheduler
 
 
-# 0.13.0 Mentors
+# 0.14.0 Inspiration & Challenges
 
 
-# 0.14.0 Fully Social
+# 0.15.0 Mentors
+
+
+# 0.16.0 Fully Social
 
 
 # 1.0.0 Official LAUNCH
