@@ -342,6 +342,39 @@ Log Journalling thoughts
 
 # 0.10.0 Add and Record Tasks
 
+## tasks
+Create Tasks and be able to log actions against them...
+
+| Name | Data Type | Description |
+| ------------- | ------------- | ---------- |
+| `id` | INT  | Unique task identifier |
+| `user_id` | INT  | The `user_id` who has created the task |
+| `description` | CHAR  | The task text / description |
+| `status` | CHAR or INT | 'PENDING', 'DONE' etc.| 
+| `time_remaining` | INT | Estimated minutes required to complete - convert to HH MM in UI) |
+| `created_at` | DATETIME | Datetime the entry was originally logged |
+| `updated_at` | DATETIME | Datetime the entry was last edited |
+
+## task_log
+Log Task
+
+| Name | Data Type | Description |
+| ------------- | ------------- | ---------- |
+| `id` | INT  | Unique identifier |
+| `user_id` | INT  | The `user_id` who is logging the journal entry |
+| `task_id` | INT  | Key to `tasks` table |
+| `comment` | CHAR  | Comment |
+| `created_at` | DATETIME | Datetime the task performance was originally logged |
+| `updated_at` | DATETIME | Datetime the task performance was last edited |
+
+## tasks__goals
+A pivot table to link multple goals to a single task - one-to-many relationship
+
+| Name | Data Type | Description |
+| ------------- | ------------- | ---------- |
+| `task_id` | INT  | key to `tasks` table |
+| `goal_id` | INT  | key to `goals` table |
+
 
 # 0.11.0 User Interactions and the GROOVY button
 
