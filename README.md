@@ -378,6 +378,16 @@ A pivot table to link multple goals to a single task - one-to-many relationship
 
 # 0.11.0 User Interactions and the GROOVY button
 
+## supporter_relationships
+Tracking the 'freind' relationships
+
+| Name | Data Type | Description |
+| ------------- | ------------- | ---------- |
+| `id` | INT  | Unique identifier |
+| `support_from_user_id` | INT | The `user_id` of the supporter / mentor |
+| `support_to_user_id` | INT | The `user_id` of the person being supported / mentored |
+| `level` | INT  | e.g. Support level 1 = supporter; support level 2 = mentor; |
+| `created_at` | DATETIME | Datetime the support relationship was registered |
 
 # 0.12.0 Misogi
 
