@@ -389,6 +389,21 @@ Tracking the 'freind' relationships
 | `level` | INT  | e.g. Support level 1 = supporter; support level 2 = mentor; |
 | `created_at` | DATETIME | Datetime the support relationship was registered |
 
+* In this release, search is supported to find users etc. Do we need to consider something like Elastic Search?
+* We will also provide a global feed of the people you are supporting. Is this doable efficiantly by querying multiple tables or so we need an aggregated feed table, or something else?
+
+## direct_messages
+| Name | Data Type | Description |
+| ------------- | ------------- | ---------- |
+| `id` | INT  | Unique identifier |
+More, more, more...
+
+## groovy_buttons
+| Name | Data Type | Description |
+| ------------- | ------------- | ---------- |
+| `id` | INT  | Unique identifier |
+More, more, more...
+
 # 0.12.0 Misogi
 
 
