@@ -412,7 +412,14 @@ DMs between users
 | Name | Data Type | Description |
 | ------------- | ------------- | ---------- |
 | `id` | INT  | Unique identifier |
-More, more, more...
+| `liker_id` | INT  | Key to `users` table |
+| `groove_log_id` | INT  | Key to `grooves_log` table |
+| `moods_log_id` | INT  | Key to `moods_log` table |
+| `journal_log_id` | INT  | Key to `journal_log` table |
+| `tasks_log_id` | INT  | Key to `tasks_log` table |
+| `type` | INT OR CHAR | Type of Button - e.g. Groovy or Other types |
+| `created_at` | DATETIME | Datetime the like button was pressed |
+
 
 # 0.12.0 Misogi
 
