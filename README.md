@@ -29,8 +29,8 @@ Users will be authenticated by Google Firebase Authenticator which provides a ha
 | Name | Data Type | Description |
 | ------------- | ------------- | ---------- |
 | `id` | INT | uniqueID |
-| `terms_type` | CHAR | type |
-| `terms_text` | CHAR | text |
+| `type` | CHAR | type |
+| `text` | CHAR | text |
 | `created_at` | DATE | date | 
 
 * Terms Accepted table needed to relate to a versioned list of terms, organised by term types...
