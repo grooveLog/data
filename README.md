@@ -10,7 +10,8 @@ Users will be authenticated by Google Firebase Authenticator which provides a ha
 
 | Name | Data Type | Description |
 | ------------- | ------------- | ---------- |
-| `id` | CHAR | hash from google |
+| `id` | INT | Unique ID |
+| `auth_id` | CHAR | hash from google |
 | `authentication_method` | CHAR or INT  | if available from google e.g. Facebook; Email etc |
 | `email` | CHAR  |      |
 | `username` | CHAR  |      |
@@ -19,13 +20,20 @@ Users will be authenticated by Google Firebase Authenticator which provides a ha
 | `birthday` | DATE | Use this to get the age of the user (non-mandatory) |
 | `gender` | INT or CHAR | e.g. MALE, FEMALE - OTHER? (non-mandatory) |
 | `personal_summary` | CHAR  | user submitted description of who they are and why they're using grooveLog |
-| `terms_accepted` | BOOL | If terms were accepted | 
 | `created_at` | DATE | UTC of Signup Time | 
 | `updated_at` | DATE | Date of last update | 
 | `locale` | CHAR | The user's main locale e.g. Europe/Amsterdam or use locale short codes | 
 | `status` | CHAR or INT | 'ACTIVE', 'INACITVE', 'GROOVER' etc... |
 
-* Terms Accepted probably needs to relate to a versioned list of terms, organised by term types...
+## user_terms
+| Name | Data Type | Description |
+| ------------- | ------------- | ---------- |
+| `id` | INT | uniqueID |
+| `terms_type` | CHAR | type |
+| `terms_text` | CHAR | text |
+| `created_at` | DATE | date | 
+
+* Terms Accepted table needed to relate to a versioned list of terms, organised by term types...
 
 ## user_audits
 An audit trail of logins and other important activities
