@@ -30,7 +30,7 @@ Users will be authenticated by Google Firebase Authenticator which provides a ha
 | ------------- | ------------- | ---------- |
 | `id` | INT | uniqueID |
 | `type` | CHAR | type |
-| `text` | CHAR | text |
+| `text` | MEDIUM TEXT | text |
 | `created_at` | DATE | date | 
 
 * Terms Accepted table needed to relate to a versioned list of terms, organised by term types...
