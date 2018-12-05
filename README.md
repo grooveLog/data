@@ -54,8 +54,8 @@ A table of taggable quotes / meditations from historical and contemporary source
 | `id` | INT  | unique identifer |
 | `text` | CHAR  | Quote |
 | `meditation_attribution_id` | INT  | key to `meditation_attributes` table |
-| `displays` | INT  | number of times a meditation has been rendered |
-| `groovie` | INT  | number of Groovies recieved |
+| `shown_count` | INT  | number of times a meditation has been rendered |
+| `groovies` | INT  | number of Groovies recieved |
 | `created_at` | DATETIME | When the meditation was created |
 | `updated_at` | DATETIME | When the questionnaire was last updated |
 
