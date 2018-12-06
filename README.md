@@ -19,7 +19,7 @@ Users will be authenticated by Google Firebase Authenticator which provides a ha
 | `lastname` | CHAR  |      |
 | `birthday` | DATE | Use this to get the age of the user (non-mandatory) |
 | `gender` | INT or CHAR | e.g. MALE, FEMALE - OTHER? (non-mandatory) |
-| `personal_summary` | CHAR  | user submitted description of who they are and why they're using grooveLog |
+| `personal_summary` | TEXT  | user submitted description of who they are and why they're using grooveLog |
 | `created_at` | DATE | UTC of Signup Time | 
 | `updated_at` | DATE | Date of last update | 
 | `locale` | CHAR | The user's main locale e.g. Europe/Amsterdam or use locale short codes | 
@@ -30,7 +30,7 @@ Users will be authenticated by Google Firebase Authenticator which provides a ha
 | ------------- | ------------- | ---------- |
 | `id` | INT | uniqueID |
 | `type` | CHAR | type |
-| `text` | MEDIUM TEXT | text |
+| `text` | TEXT | text |
 | `created_at` | DATE | date | 
 
 * Terms Accepted table needed to relate to a versioned list of terms, organised by term types...
@@ -52,7 +52,7 @@ A table of taggable quotes / meditations from historical and contemporary source
 | Name | Data Type | Description |
 | ------------- | ------------- | ---------- |
 | `id` | INT  | unique identifer |
-| `text` | CHAR  | Quote |
+| `text` | TEXT  | Quote |
 | `meditation_attribution_id` | INT  | key to `meditation_attributes` table |
 | `shown_count` | INT  | number of times a meditation has been rendered |
 | `groovies` | INT  | number of Groovies recieved |
@@ -79,8 +79,8 @@ List of available questionnaires.
 | `id` | INT  | Unique Identifier |
 | `type` | CHAR or INT | Declare questionnaire type/format, which will determine how it is read / displayed etc |
 | `title` | CHAR | A name/title for the questionnaire |
-| `description` | CHAR | A description |
-| `instructions` | CHAR | Instructions on how to complete the questionnaire |
+| `description` | TEXT | A description |
+| `instructions` | TEXT | Instructions on how to complete the questionnaire |
 | `image` | CHAR | ID of an image asset in cloud storage |
 | `user_id` | INT | The `user` who created/contributed the questionnaire | 
 | `created_at` | DATETIME | When the questionnaire was created |
@@ -124,7 +124,7 @@ Provide the ability to rate a questionnaire to provide aggregated user review da
 | `questionnaire_id` | INT  | Key to `questionnaires` table |
 | `questions_id` | INT  | Key to versioned `questions` in questions table |
 | `rating` | INT  | e.g. rating on a scale of 1 to 5 (e.g. stars) |
-| `comment` | CHAR | User comment |
+| `comment` | TEXT | User comment |
 | `created_at` | DATETIME  | When rating was submitted |
 
 * NOTE: Possibly have a universal ratings table for all kinds of resources instead? 
