@@ -236,7 +236,7 @@ A list of all user contributed grooves which may be reusable by others
 | ------------- | ------------- | ---------- |
 | `id` | INT  | Unique identifier |
 | `user_id` | INT | ID of `user` who submitted the groove |
-| `name` | CHAR  | Name of Groove (e.g. 'Running' or 'Practice Scales' or 'Fasting' |
+| `name` | CHAR  | Name of Groove (e.g. 'Running' or 'Practice Scales' or 'Fasting') |
 | `privacy` | CHAR or INT | PUBLIC or PRIVATE (or TEAM in Future) |
 | `endorsed` | BOOL | Whether endorsd by GrooveLog |
 | `status` | CHAR | ACTIVE / INACTIVE etc. |
@@ -258,7 +258,7 @@ The personal implementation of a universal groove
 | `volume_amount` | INT | Optional, relates to `volume_measurement` e.g. 20 mins or 10 reps |
 | `volume_measurement` | N/A | Optional, relates to `volume_amounnt` - mins or reps |
 | `frequency_prefix` | CHAR or INT | Optional prefix like 'at least', or 'up to' |
-| `frequency_number` | INT | number of times performed (e.g. 'once' per week / 'twice' per week' |
+| `frequency_number` | INT | number of times performed (e.g. 'once' per week / 'twice' per week') |
 | `frequency_period` | CHAR or INT| e.g. 'per week', 'per day', or 'per month' |
 | `status` | CHAR or INT | e.g. ACTIVE / PAUSED etc |
 | `created_at` | DATE | When added to my personal groove list |
@@ -359,7 +359,7 @@ Create Tasks and be able to log actions against them...
 | `user_id` | INT  | The `user_id` who has created the task |
 | `description` | CHAR  | The task text / description |
 | `status` | CHAR or INT | 'PENDING', 'DONE' etc.| 
-| `time_remaining` | INT | Estimated minutes required to complete - convert to HH MM in UI) |
+| `time_remaining` | INT | Estimated minutes required to complete - convert to HH MM in UI |
 | `created_at` | DATETIME | Datetime the entry was originally logged |
 | `updated_at` | DATETIME | Datetime the entry was last edited |
 
