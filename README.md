@@ -41,7 +41,7 @@ An audit trail of logins and other important activities
 | Name | Data Type | Description |
 | ------------- | ------------- | ---------- |
 | `user_id` | CHAR  |       |
-| `activity` | CHAR or INT | References a range of possible activites (e.g. Login, Failed Login, Privacy Settings Change etc...) |
+| `activity` | CHAR or INT | References a range of possible activities (e.g. Login, Failed Login, Privacy Settings Change etc...) |
 | `created_at` | DATETIME | When the activity happened |
 
 
