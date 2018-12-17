@@ -36,6 +36,8 @@ The proposal on https://github.com/grooveLog/data creates a number of different 
 ## log
 The ability to record the grooves/moods/tasks/journal items on a per day basis
 
+This acts like an audit of everything a user has done, which then contributes to the user's feed...
+
 | Name | Data Type | Description |
 | ------------- | ------------- | ---------- |
 | `id` | INT  | Unique identifier |
