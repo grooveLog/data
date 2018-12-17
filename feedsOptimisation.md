@@ -5,7 +5,7 @@ There are the following types of posts which will contribute to a Feed - a scrol
 * Groove Completion/non-completion
 * Recording Moods
 * Task Completion
-* Journalling Posts
+* Journaling Posts
 
 * There is also the ability to post an update without a Groove/Mood/Task/Journalling (Although we need to decide if this is a worthwhile featue because we don't want this to turn into another noisy social media platform, it should be focused on...)
 
