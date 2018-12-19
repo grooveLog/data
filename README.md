@@ -23,6 +23,7 @@ Users will be authenticated by Google Firebase Authenticator which provides a ha
 | `created_at` | DATE | UTC of Signup Time | 
 | `updated_at` | DATE | Date of last update | 
 | `locale` | CHAR | The user's main locale e.g. Europe/Amsterdam or use locale short codes | 
+| `image` | CHAR | Profile Image URL |
 | `status` | CHAR or INT | 'ACTIVE', 'INACITVE', 'GROOVER' etc... |
 
 ## user_terms
