@@ -258,7 +258,7 @@ The personal implementation of a universal groove
 | `personal_description` | CHAR | The personal implementation of the universal groove, how I will do it |
 | `commitment` | INT  | personal commitment - e.g. 75% |
 | `volume_amount` | INT | Optional, relates to `volume_measurement` e.g. 20 mins or 10 reps |
-| `volume_measurement` | N/A | Optional, relates to `volume_amounnt` - mins or reps |
+| `volume_measurement` | CHAR | Optional, relates to `volume_amounnt` - mins or reps |
 | `frequency_prefix` | CHAR or INT | Optional prefix like 'at least', or 'up to' |
 | `frequency_number` | INT | number of times performed (e.g. 'once' per week / 'twice' per week') |
 | `frequency_period` | CHAR or INT| e.g. 'per week', 'per day', or 'per month' |
