@@ -193,7 +193,7 @@ A list of all user contributed goals which may be reusable by others
 | `status` | CHAR | ACTIVE / INACTIVE etc. |
 | `created_at` | DATETIME  | When goal was added |
 | `total_assignments` | INT | Counter for the number of times this goal has been used |
-| `average_reward_rating` | FLOAT | Average of all preward ratings |
+| `average_reward_rating` | FLOAT | Average of all reward ratings |
 
 * NOTE: universal goals should also be taggable for future searches
 
@@ -243,6 +243,7 @@ A list of all user contributed grooves which may be reusable by others
 | `status` | CHAR | ACTIVE / INACTIVE etc. |
 | `created_at` | DATETIME  | When groove was added |
 | `total_assignments` | INT | Counter for the number of times this groove has been used |
+| `average_commitment_rating` | INT | Average of all commitment ratings |
 
 * NOTE: universal grooves should also be taggable for future searches
 
