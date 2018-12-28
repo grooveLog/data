@@ -11,10 +11,10 @@ Users will be authenticated by Google Firebase Authenticator which provides a ha
 | Name | Data Type | Description |
 | ------------- | ------------- | ---------- |
 | `id` | INT | Unique ID |
-| `auth_id` | CHAR | hash from google |
+| `uid` | CHAR | hash from google |
 | `authentication_method` | CHAR or INT  | if available from google e.g. Facebook; Email etc |
 | `email` | CHAR  |      |
-| `username` | CHAR  |      |
+| `display_name` | CHAR  |      |
 | `firstname` | CHAR  |      |
 | `lastname` | CHAR  |      |
 | `birthday` | DATE | Use this to get the age of the user (non-mandatory) |
