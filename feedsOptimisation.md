@@ -46,7 +46,7 @@ This acts like an audit of everything a user has done, which then contributes to
 | `groove_id` | INT  | key to `groove` table |
 | `task_id` | INT  | key to `task` table |
 | `performed_at` | DATETIME  | date the item is performed (e.g. Grooves/Tasks only) |
-| `groove_type` | CHAR or INT  | DONE or FAIL |
+| `success_type` | CHAR | DONE or FAIL |
 | `comment` | CHAR | Comment or excuse |
 | `created_at` | DATETIME | Time it was logged | 
 | `mood_score` | INT  | 0 to 100 - for Quick Moods |
